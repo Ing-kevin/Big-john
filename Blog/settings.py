@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = (
     #'material', 'material.admin',
+    'gunicorn',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,7 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_markdown',
-    'appblog'
+    'appblog',
 )
 
 MIDDLEWARE_CLASSES = (
