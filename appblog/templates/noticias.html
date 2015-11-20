@@ -1,0 +1,41 @@
+{% extends 'main.html' %}
+
+{% block logo %}
+IIE Website .:chapter liberty:.
+{% endblock %}
+
+{% block img %}
+{% load staticfiles %}
+background-image: url('{% static 'img/index.png' %}')
+{% endblock %}
+
+{% block header %}
+<h1>Noticias</h1>
+
+
+{% endblock %}
+
+{% block main %}
+
+<div class="row">
+  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    {% for i in object_list %}
+    <div class="post-preview">
+      <a href="/entrada/{{ i.slug }}/">
+        <h2 class="post-title">
+          {{ i.titulo }}
+        </h2>
+      </a>
+    </div>
+    <hr>
+    {% endfor %}
+    <!-- Pager -->
+    <ul class="pager">
+      <li class="next">
+        <a href="{% url 'about' %}">Ver mas &rarr;</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+    {% endblock main%}

@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+
+{% block logo %}
+IIE Website .:chapter liberty:.
+{% endblock %}
+
+{% block img %}
+{% load staticfiles %}
+background-image: url('{% static 'img/index.png' %}')
+{% endblock %}
+
+{% block header %}
+<h1>Blog IIE</h1>
+<hr class="small">
+
+{% endblock %}
+
+{% block main %}
+
+<div class="row">
+  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+    <!-- Pager -->
+    <ul class="pager">
+      <li class="next">
+        <a href="{% url 'about' %}">Ver mas &rarr;</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+    {% endblock main%}
