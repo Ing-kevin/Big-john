@@ -1,15 +1,17 @@
 {% extends 'main.html' %}
 
-{% block img %}
-    {% load staticfiles %}
-{% endblock %}
 
-{% block logo %}
-    <img src="http://www.iienet2.org/images/v1_02.png" alt="" width="50%">
+{% block img %}
+{% load staticfiles %}
+background-image: url('{% static 'img/ingeniero.jpg' %}')
 {% endblock %}
 
 {% block header %}
-    <h2 style="color: darkslateblue" class="text-center">Historia
+<h1 >¿Quienes somos?</h1>
+<hr class="small">
+
+{% endblock %}
+{% block main %}
     <hr style="border-color: #A7B8C7">
      <h4 align="left" style="color: black " >El Instituto de Ingenieros Industriales (IIE por sus siglas en inglés) es la organización de Ingenieros Industriales más importante a nivel mundial que agrupa a profesionistas y estudiantes de esta disciplina con la finalidad de fomentar su desarrollo.
 El Instituto esta comprometido a proveer información acerca de la profesión que se relevante para sus miembros, para aquellos que practican la profesión, y para el público en general.
@@ -34,8 +36,4 @@ Una función Integral del IIE ha sido el otorgar reconocimiento a aquellos estud
 En 1956, el IIE otorgó el primer Chapter Development Award (Premio a Desarrollo de Capítulos), seguido al año siguiente por el Graduate Students and Research Award (Premio a Alumnos de Postgrado e Investigación).
 El prestigioso premio Frank and Lillian Gilbreth Award se estableció en 1962.   Las contribuciones hechas por Lillian Gilbreth fueron reconocidas por el Servicio Postal de EE.UU. (US Postal Service) a través de la emisión de una estampilla conmemorativa en 1984.
 Actualmente el IIE otorga aproximadamente 25 premios y becas para reconocer a sus miembros, estudiantes, e instituciones que han hecho contribuciones significativas a la profesión.</h4>
-{% endblock %}
-
-{% block main %}
-
 {% endblock main %}

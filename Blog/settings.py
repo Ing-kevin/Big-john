@@ -32,8 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'material',
-    'material.admin',
+   # 'material','material.admin',
     'gunicorn',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -81,10 +80,10 @@ WSGI_APPLICATION = 'Blog.wsgi.application'
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 #DATABASES = {
- #   'default': {
-   #     'ENGINE': 'django.db.backends.sqlite3',
-    #    'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
- #   }
+ #  'default': {
+ #       'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#    }
 #}
 
 DATABASES = {'default': dj_database_url.config(default=os.environ["DATABASE_URL"])}
@@ -114,3 +113,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
