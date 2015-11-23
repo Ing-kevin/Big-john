@@ -10,7 +10,8 @@ class Entrada(models.Model):
     seccionales = ((1, "Barranquilla"), (2, "Cali"), (3, "Bogota"), (4, "Cucuta"))
     autor = models.IntegerField(choices=seccionales)
     slug = models.SlugField(editable=False)
-    img = models.ImageField(upload_to="imgenes")
+    img = models.URLField()
+    fecha = models.DateField(null=True, auto_now_add=True)
 
     def __unicode__(self):
         return self.titulo
