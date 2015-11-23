@@ -1,12 +1,12 @@
 from django.db import models
 from django.template.defaultfilters import slugify
-from django_markdown.models import MarkdownField
+from ckeditor.fields import RichTextField
 
 
 class Entrada(models.Model):
     """docstring for Entrada"""
     titulo = models.CharField(max_length = 20)
-    contenido = MarkdownField()
+    contenido = RichTextField()
     seccionales = ((1, "Barranquilla"), (2, "Cali"), (3, "Bogota"), (4, "Cucuta"))
     autor = models.IntegerField(choices=seccionales)
     slug = models.SlugField(editable=False)
