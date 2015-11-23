@@ -26,5 +26,5 @@ urlpatterns = [
     url(r'^entrada/(?P<slug>[-\w]+)/$', EntradaDetailView.as_view(), name='detalle'),
     url(r'^about/', 'appblog.views.about', name='about'),
      url(r'^noticias', noticia.as_view(),name="noticias"),
-
+    url(r'^ckeditor/',include('ckeditor_uploader.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

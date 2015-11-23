@@ -32,7 +32,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-   # 'material','material.admin',
+   #'material','material.admin',
+    'ckeditor',
+    'ckeditor_uploader',
     'gunicorn',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -81,9 +83,9 @@ WSGI_APPLICATION = 'Blog.wsgi.application'
 
 #DATABASES = {
  #  'default': {
- #       'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#    }
+  #      'ENGINE': 'django.db.backends.sqlite3',
+   #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    #}
 #}
 
 DATABASES = {'default': dj_database_url.config(default=os.environ["DATABASE_URL"])}
@@ -117,3 +119,27 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+#Check Editor
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_UPLOAD_SLUGIFY_FILENAME = False
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline', 'Image'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source'],
+            ['TextColor', 'BGColor'], ['Styles', 'Format', 'Font', 'FontSize', 'Smiley'],  ['Link', 'Unlink', 'Anchor'],
+            {'name': 'insert',
+             'items': ['Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak', 'Iframe']},
+            '/',
+        ]
+    }
+}
+
+
+USE_DJANGO_JQUERY = False
