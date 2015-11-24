@@ -9,6 +9,7 @@
 {% block header %}
     <h1>{{ object.titulo }}</h1>
     <h2> Publicado por la seccional Unilibre: {{ object.get_autor_display }}</h2>
+    <h3> Fecha de publicacion: {{ object.fecha }}</h3>
 {% endblock %}
 
 {% block main %}
